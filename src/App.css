@@ -1,38 +1,97 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+	text-align: center;
+  background-color: #fff6d9;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+	min-height: 20vh;
+	font-size: calc(50px + 2vmin);
+	color: #ffb535;
+	font-weight: bold;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.component {
+	min-height: 80vh;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.workout-form {
+	background-color: #fcdc80;
+	border-radius: 15px;
+	text-align: left;
+	padding: 1em;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.form-labels {
+	/* font-size: 22px; */
+	font-weight: bold;
+	color: black;
+	text-shadow: -1px -1px 0 #fff6d9, 1px -1px 0 #fff6d9, -1px 1px 0 #fff6d9,
+		1px 1px 0 #fff6d9;
+}
+
+.labels {
+  width: 10em;
+}
+
+.labels:hover {
+	cursor: pointer;
+}
+
+.form-group {
+	height: 5em;
+}
+
+.form-button,
+.back-button:hover,
+.back-button:focus,
+.back-button:active {
+	background-color: #ffb535 !important;
+	border: 1px solid #fff6d9 !important;
+	color: #fff6d9 !important;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+.form-button:hover,
+.form-button:focus,
+.form-button:active,
+.back-button {
+	cursor: pointer;
+	background-color: #fff6d9 !important;
+	color: #ffb535 !important;
+	border: 1px solid #ffb535 !important;
+	font-size: 18px;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+.length-select,
+.opt:hover {
+  cursor: pointer;
+}
+
+.workout-result {
+	background-color: #fcdc80;
+	border-radius: 15px;
+	text-align: left;
+	padding: 2em;
+	font-size: 20px;
+	font-weight: 500;
+	margin-top: 2em;
+}
+
+.set {
+	margin-left: 1em;
+}
+
+#bootstrap-overrides input[type=radio],
+#bootstrap-overrides input[type=checkbox] {
+  margin: 0px 5px 0px;
 }
