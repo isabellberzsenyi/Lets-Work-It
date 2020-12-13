@@ -9,20 +9,19 @@ import Oops from './components/oops';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(0);
+  // const [currentTime, setCurrentTime] = useState(0);
 
-  useEffect(() => {
-    fetch('/time').then(res => res.json()).then(data => {
-      console.log(data.time);
-      setCurrentTime(data.time);
-    });
-  }, []);
+  // useEffect(() => {
+  //   fetch('/time').then(res => res.json()).then(data => {
+  //     // console.log(data.time);
+  //     setCurrentTime(data.time);
+  //   });
+  // }, []);
 
   return (
     <div className='App' id="bootstrap-overrides">
 			<header className='App-header'>
         <div className="col-md-6">Work It</div>
-        <div className="col-md-6">{currentTime}</div>
 			</header>
 			<BrowserRouter>
 				<div className='Site-content'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import WorkoutForm from './workout-form';
 
-function Home() {
+const Home = () => {
 	return (
 		<div className='container component'>	
 			<div className="row">

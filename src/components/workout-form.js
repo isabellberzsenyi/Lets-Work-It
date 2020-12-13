@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Form, FormGroup, Input, Label } from 'reactstrap';
 import Button from 'reactstrap/lib/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useHistory } from "react-router-dom";
 
 const WorkoutForm = () => {
+	let history = useHistory();
 	const [type, setType] = useState();
 	const [length, setLength] = useState('30');
 	const [difficulty, setDifficulty] = useState();
@@ -23,7 +25,7 @@ const WorkoutForm = () => {
 							onChange={(event) => {
 								setLength(event.target.value);
 							}}>
-							<option value='30' selected>30 mins</option>
+							<option value='30'>30 mins</option>
 							<option value='35'>35 mins</option>
 							<option value='40'>40 mins</option>
 							<option value='45'>45 mins</option>
@@ -66,6 +68,37 @@ const WorkoutForm = () => {
 					</FormGroup>
 				</FormGroup>
 			);
+		}
+	}
+	function validateForm() {
+		if (type === 'interval') {
+			return (length != null) && (group != null);
+		} else if (type === 'circuit') {
+			return (difficulty != null) && group != null;
+		} else {
+			// must have type
+			return false;
+		}
+	}
+
+	function sendData() {
+		if (validateForm()) {
+			const requestOptions = {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					type: type,
+					length: length,
+					difficulty: difficulty,
+					group: group,
+					dumbbells: dumbbells
+				})
+			};
+			fetch('/send', requestOptions)
+				.then(response => response.json())
+				.then(data => console.log(data))
+				.catch(error => console.log('uh oh'));
+			history.push('/workout');
 		}
 	}
 
@@ -154,7 +187,7 @@ const WorkoutForm = () => {
 					<Button
 						variant='custom'
 						className='form-button'
-						onClick={() => console.log(validateForm())}
+						onClick={() => sendData()}
 						>
 						Work It
 					</Button>
