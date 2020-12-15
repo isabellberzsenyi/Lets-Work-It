@@ -1,65 +1,64 @@
 h5 {
-	position: relative;
-	/* font-size: 30px; */
-	z-index: 1;
-	overflow: hidden;
-	text-align: center;
-  }
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-align: center;
+}
 
-h5:before, h5:after {
-	position: absolute;
-	top: 50%;
-	overflow: hidden;
-	height: 1px;
-	width: 50%;
-	content: "\a0";
-	background-color: black;
+h5:before,
+h5:after {
+  position: absolute;
+  top: 50%;
+  overflow: hidden;
+  height: 1px;
+  width: 50%;
+  content: "\a0";
+  background-color: black;
 }
 
 h5:after {
-	margin-left: 5%;
+  margin-left: 5%;
 }
 
 h5:before {
-	margin-left: -55%;
-	text-align: right;
+  margin-left: -55%;
+  text-align: right;
 }
 
 .App {
-	text-align: center;
-	background-color: #fff6d9;
+  text-align: center;
+  background-color: #fff6d9;
 }
 
 .App-header {
-	min-height: 20vh;
-	font-size: calc(50px + 2vmin);
-	color: #ffb535;
-	font-weight: bold;
+  min-height: 20vh;
+  font-size: calc(50px + 2vmin);
+  color: #ffb535;
+  font-weight: bold;
   display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .component {
-	min-height: 80vh;
+  min-height: 80vh;
 }
 
 .workout-form {
-	background-color: #fcdc80;
-	border-radius: 15px;
-	text-align: left;
-	padding: 1em;
-	font-size: 18px;
-	font-weight: 500;
+  background-color: #fcdc80;
+  border-radius: 15px;
+  text-align: left;
+  padding: 1em;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .form-labels {
-	/* font-size: 22px; */
-	font-weight: bold;
-	color: black;
-	text-shadow: -1px -1px 0 #fff6d9, 1px -1px 0 #fff6d9, -1px 1px 0 #fff6d9,
-		1px 1px 0 #fff6d9;
+  /* font-size: 22px; */
+  font-weight: bold;
+  color: black;
+  text-shadow: -1px -1px 0 #fff6d9, 1px -1px 0 #fff6d9, -1px 1px 0 #fff6d9, 1px 1px 0 #fff6d9;
 }
 
 .labels {
@@ -67,36 +66,36 @@ h5:before {
 }
 
 .labels:hover {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .form-group {
-	height: 5em;
+  height: 5em;
 }
 
 .form-button,
 .back-button:hover,
 .back-button:focus,
 .back-button:active {
-	background-color: #ffb535 !important;
-	border: 1px solid #fff6d9 !important;
-	color: #fff6d9 !important;
-	font-size: 18px;
-	font-weight: bold;
-	border-radius: 10px;
+  background-color: #ffb535 !important;
+  border: 1px solid #fff6d9 !important;
+  color: #fff6d9 !important;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
 .form-button:hover,
 .form-button:focus,
 .form-button:active,
 .back-button {
-	cursor: pointer;
-	background-color: #fff6d9 !important;
-	color: #ffb535 !important;
-	border: 1px solid #ffb535 !important;
-	font-size: 18px;
-	font-weight: bold;
-	border-radius: 10px;
+  cursor: pointer;
+  background-color: #fff6d9 !important;
+  color: #ffb535 !important;
+  border: 1px solid #ffb535 !important;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
 }
 
 .length-select,
@@ -105,24 +104,24 @@ h5:before {
 }
 
 .workout-result {
-	background-color: #fcdc80;
-	border-radius: 15px;
-	text-align: left;
-	padding: 2em;
-	font-size: 20px;
-	font-weight: 500;
-	margin-top: 2em;
+  background-color: #fcdc80;
+  border-radius: 15px;
+  text-align: left;
+  padding: 2em;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 2em;
 }
 
 .set {
-	margin-left: 1em;
+  margin-left: 1em;
 }
 
 .list-item {
-	font-size: 18px;
+  font-size: 18px;
 }
 
-#bootstrap-overrides input[type=radio],
-#bootstrap-overrides input[type=checkbox] {
+#bootstrap-overrides input[type="radio"],
+#bootstrap-overrides input[type="checkbox"] {
   margin: 0px 5px 0px;
 }
