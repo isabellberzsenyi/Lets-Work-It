@@ -1,6 +1,33 @@
+h5 {
+	position: relative;
+	/* font-size: 30px; */
+	z-index: 1;
+	overflow: hidden;
+	text-align: center;
+  }
+
+h5:before, h5:after {
+	position: absolute;
+	top: 50%;
+	overflow: hidden;
+	height: 1px;
+	width: 50%;
+	content: "\a0";
+	background-color: black;
+}
+
+h5:after {
+	margin-left: 5%;
+}
+
+h5:before {
+	margin-left: -55%;
+	text-align: right;
+}
+
 .App {
 	text-align: center;
-  background-color: #fff6d9;
+	background-color: #fff6d9;
 }
 
 .App-header {
@@ -89,6 +116,10 @@
 
 .set {
 	margin-left: 1em;
+}
+
+.list-item {
+	font-size: 18px;
 }
 
 #bootstrap-overrides input[type=radio],
