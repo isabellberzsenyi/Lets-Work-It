@@ -7,11 +7,10 @@ const Home = () => {
       <div className='row'>
         <div className='col-md-6 col-md-offset-3'>
           <p>
-            Lorem ipsu dolor sit amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo
-            sagittis, sapien dui mattis dui, non pulvinar lorem felis nec erat Lorem ipsum dolor sit
-            amet, consectetur adipiscing elit. Nunc maximus, nulla ut commodo sagittis, sapien dui
-            mattis dui, non pulvinar lorem felis nec erat pulvinar lorem felis nec erat Lorem ipsum
-            dolor sit amet,
+            It can be daunting to create your own workout, and we all know it’d be way easier if
+            someone just told you what muscles to work out. That’s why we have <b>Work It!</b> Work
+            It allows you chose your workout settings and in return get a personalized workout,
+            including recommendations for your warm up and cool down.
           </p>
         </div>
       </div>

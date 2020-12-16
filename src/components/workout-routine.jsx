@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "reactstrap";
 import Button from "reactstrap/lib/Button";
 import RoutineSection from "./routine-section.jsx";
 import Set from "./set.jsx";
 import { useHistory } from "react-router-dom";
+import { warmUpText, warmUpExercises, coolDownText, coolDownExercises } from "../info";
 
 const WorkoutResult = () => {
   let history = useHistory();
@@ -27,7 +27,7 @@ const WorkoutResult = () => {
     <div className='container component'>
       <div className='row'>
         <div className='col-sm-2 col-sm-offset-1'>
-          <Button className='back-button' onClick={() => history.push("/")}>
+          <Button id='back-button' onClick={() => history.push("/")}>
             Back
           </Button>
         </div>
@@ -36,10 +36,11 @@ const WorkoutResult = () => {
         </div>
       </div>
       <div className='row'>
-        <div className='col-sm-8 col-sm-offset-2  workout-result'>
+        <div className='col-sm-8 col-sm-offset-2 workout-result'>
           <RoutineSection
             title='Warm Up'
-            bullets={["aajkdhfajkhdfakjldhakl", "bajkdhfkajdfkjsf", "cjkasdfhjashfjds"]}
+            sectionDescription={warmUpText}
+            bullets={warmUpExercises}
           />
           {workoutType === "circuit" && (
             <Set workout_type={workoutType} setNum='3' exercises={exercises} reps={reps} />
@@ -47,11 +48,11 @@ const WorkoutResult = () => {
           {workoutType === "interval" && <Set workout_type={workoutType} exercises={exercises} />}
           <RoutineSection
             title='Cool Down'
-            bullets={["aajkdhfajkhdfakjldhakl", "bajkdhfkajdfkjsf", "cjkasdfhjashfjds"]}
+            sectionDescription={coolDownText}
+            bullets={coolDownExercises}
           />
         </div>
       </div>
-      {/* <WorkoutResult /> */}
     </div>
   );
 };

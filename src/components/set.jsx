@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { intervalText, circuitText } from "../info";
 
 const Set = (props) => {
   const [toolTipOpen, setToolTipOpen] = useState(false);
@@ -33,21 +34,18 @@ const Set = (props) => {
     <div>
       <div className='row'>
         <div className='col-sm-12'>
-          <h5 style={{ fontSize: "36px" }}> {capitalize(props.workout_type)} Workout</h5>
+          <h5 style={{ fontSize: "32px" }}> {capitalize(props.workout_type)} Workout</h5>
         </div>
       </div>
       <div className='row'>
         {props.workout_type === "circuit" ? (
-          <div className='col-sm-10'>
-            <p>Lorem ipsu dolor sit amet, consectetur adipiscing elit.</p>
-            <h4 className='set'>{props.setNum} Sets</h4>
+          <div className='col-sm-12' id='section-description'>
+            {circuitText}
+            <h4 className='set'>Complete {props.setNum} Sets of:</h4>
           </div>
         ) : (
-          <div className='col-sm-10'>
-            <p>
-              Lorem ipsu dolor sit amet, consectetur adipiscing elit.Lorem ipsu dolor sit amet,
-              consectetur adipiscing elit.
-            </p>
+          <div className='col-sm-12' id='section-description'>
+            {intervalText}
           </div>
         )}
       </div>

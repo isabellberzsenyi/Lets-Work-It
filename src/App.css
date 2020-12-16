@@ -1,3 +1,7 @@
+p {
+  font-size: 16px;
+}
+
 h5 {
   position: relative;
   z-index: 1;
@@ -50,12 +54,11 @@ h5:before {
   border-radius: 15px;
   text-align: left;
   padding: 1em;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .form-labels {
-  /* font-size: 22px; */
   font-weight: bold;
   color: black;
   text-shadow: -1px -1px 0 #fff6d9, 1px -1px 0 #fff6d9, -1px 1px 0 #fff6d9, 1px 1px 0 #fff6d9;
@@ -73,22 +76,32 @@ h5:before {
   height: 5em;
 }
 
-.form-button,
-.back-button:hover,
-.back-button:focus,
-.back-button:active {
+.error {
+  background-color: #fff6d9 !important;
+  color: #ffb535;
+  font-weight: bold;
+  border: 1px solid #fff6d9 !important;
+  border-radius: 10px;
+  text-align: center;
+}
+
+button#form-button,
+button#form-button:focus,
+button#back-button:hover,
+button#back-button:focus,
+button#back-button:active {
   background-color: #ffb535 !important;
   border: 1px solid #fff6d9 !important;
   color: #fff6d9 !important;
   font-size: 18px;
   font-weight: bold;
   border-radius: 10px;
+  outline: none;
 }
 
-.form-button:hover,
-.form-button:focus,
-.form-button:active,
-.back-button {
+button#form-button:hover,
+button#form-button:active,
+button#back-button {
   cursor: pointer;
   background-color: #fff6d9 !important;
   color: #ffb535 !important;
@@ -96,6 +109,7 @@ h5:before {
   font-size: 18px;
   font-weight: bold;
   border-radius: 10px;
+  outline: none;
 }
 
 .length-select,
@@ -108,7 +122,7 @@ h5:before {
   border-radius: 15px;
   text-align: left;
   padding: 2em;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
   margin-top: 2em;
 }
@@ -118,7 +132,15 @@ h5:before {
 }
 
 .list-item {
-  font-size: 18px;
+  font-size: 16px;
+}
+
+#section-description {
+  font-size: 16px;
+  text-align: center;
+  text-align: justify;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 
 #bootstrap-overrides input[type="radio"],

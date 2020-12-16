@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Input, Label } from "reactstrap";
+import { Form, FormGroup, Input, Label, Alert } from "reactstrap";
 import Button from "reactstrap/lib/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router-dom";
@@ -23,6 +23,29 @@ const WorkoutForm = () => {
     }
   }
 
+  function showError(section) {
+    let errorMessage = "";
+    switch (section) {
+      case "type":
+        errorMessage = "workout type";
+        break;
+      case "difficulty":
+        errorMessage = "difficulty level";
+        break;
+      case "group":
+        errorMessage = "muscle group";
+        break;
+      default:
+        errorMessage = "";
+        break;
+    }
+    return !valid ? (
+      <div className='col-sm-6'>
+        <p className='error'>Please select a {errorMessage}!</p>
+      </div>
+    ) : null;
+  }
+
   async function sendData() {
     if (validateForm()) {
       const requestOptions = {
@@ -36,10 +59,13 @@ const WorkoutForm = () => {
           dumbbells: dumbbells,
         }),
       };
-      await fetch("/send", requestOptions)
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch((error) => console.log("uh oh"));
+      try {
+        await fetch("/send", requestOptions).then((response) => response.json());
+      } catch (e) {
+        history.push("/oops");
+        return;
+      }
+
       history.push("/workout");
     } else {
       setValid(false);
@@ -67,12 +93,10 @@ const WorkoutForm = () => {
                 type='radio'
                 name='type'
                 className='opt'
-                valid
                 onClick={() => {
                   setType("interval");
                   setGroup("full-body");
                 }}
-                invalid={true}
               />
               Interval
             </Label>
@@ -81,7 +105,7 @@ const WorkoutForm = () => {
               Circuit
             </Label>
           </FormGroup>
-          {!valid && type === null && <p>Please select a workout type!</p>}
+          {type === null && showError("type")}
         </FormGroup>
         {type === "interval" && (
           <FormGroup className='form-group'>
@@ -133,7 +157,7 @@ const WorkoutForm = () => {
                 Hard
               </Label>
             </FormGroup>
-            {!valid && difficulty === null && <p>Please select a difficulty level!</p>}
+            {difficulty === null && showError("difficulty")}
           </FormGroup>
         )}
         <FormGroup className='form-group'>
@@ -170,7 +194,7 @@ const WorkoutForm = () => {
               Lower Body
             </Label>
           </FormGroup>
-          {!valid && group === null && <p>Please select a muscle group!</p>}
+          {group === null && showError("group")}
         </FormGroup>
         <FormGroup check>
           <Label check className='labels'>
@@ -185,13 +209,7 @@ const WorkoutForm = () => {
             alignItems: "center",
             justifyContent: "center",
           }}>
-          <Button
-            variant='custom'
-            className='form-button'
-            onClick={() => {
-              sendData();
-              console.log(1);
-            }}>
+          <Button id='form-button' onClick={() => sendData()}>
             Work It
           </Button>
         </FormGroup>
