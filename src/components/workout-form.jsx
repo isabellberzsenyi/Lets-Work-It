@@ -60,7 +60,7 @@ const WorkoutForm = () => {
         }),
       };
       try {
-        await fetch("/send", requestOptions).then((response) => response.json());
+        await fetch("/api/send", requestOptions).then((response) => response.json());
       } catch (e) {
         history.push("/oops");
         return;

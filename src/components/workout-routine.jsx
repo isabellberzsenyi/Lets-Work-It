@@ -13,7 +13,7 @@ const WorkoutResult = () => {
   const [sets, setSets] = useState(0);
 
   useEffect(async () => {
-    await fetch("/result")
+    await fetch("/api/result")
       .then((res) => res.json())
       .then((data) => {
         setWorkoutType(data.workout_type);

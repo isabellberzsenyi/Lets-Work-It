@@ -1,15 +1,14 @@
-from app import app, WORKOUT
+from .app import app, WORKOUT
 import time
 import json
-import ast
 from flask import request
-from generate_workout import generate_workout
+from .generate_workout import generate_workout
 
-@app.route('/time')
-def get_current_time():
-    return {'time': time.time()}
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
 
-@app.route('/result')
+@app.route('/api/result')
 def get_workout_result():
     return {
         "workout_type": WORKOUT.workout_type,
@@ -18,7 +17,7 @@ def get_workout_result():
         "sets": WORKOUT.sets,
     }
 
-@app.route('/send', methods=['POST'])
+@app.route('/api/send', methods=['POST'])
 def get_form():
     if request.method == 'POST':
         decoded_data = request.data.decode('utf-8')
@@ -33,5 +32,4 @@ def get_form():
         else:
             WORKOUT.reps = 0
             WORKOUT.sets = 0
-        print("w", WORKOUT.exercises, WORKOUT.reps, WORKOUT.sets)
     return "1"
