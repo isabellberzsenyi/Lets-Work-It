@@ -2,6 +2,10 @@ import csv
 import pandas
 from io import StringIO
 from random import randint
+import os
+
+global basedir
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 def get_exercise(part, names, dumbbells):
     grouped_names = {}
@@ -16,7 +20,7 @@ def get_exercise(part, names, dumbbells):
 
     for name, num in grouped_names.items():
         if num > 0:
-            with open('exercises.csv', 'r') as file:
+            with open(os.path.join(basedir, 'exercises.csv'), 'r') as file:
                 df = pandas.read_csv(file) #change file to filepath
                 filtered_csv = ""
                 

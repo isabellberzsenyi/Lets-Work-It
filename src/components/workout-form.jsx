@@ -59,8 +59,9 @@ const WorkoutForm = () => {
           dumbbells: dumbbells,
         }),
       };
+
       try {
-        await fetch("/api/send", requestOptions).then((response) => response.json());
+        await fetch("/send", requestOptions).then((response) => response.json());
       } catch (e) {
         history.push("/oops");
         return;
@@ -209,7 +210,12 @@ const WorkoutForm = () => {
             alignItems: "center",
             justifyContent: "center",
           }}>
-          <Button id='form-button' onClick={() => sendData()}>
+          <Button
+            id='form-button'
+            onClick={(e) => {
+              e.preventDefault;
+              sendData();
+            }}>
             Work It
           </Button>
         </FormGroup>

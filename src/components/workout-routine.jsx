@@ -12,15 +12,22 @@ const WorkoutResult = () => {
   const [reps, setReps] = useState([]);
   const [sets, setSets] = useState(0);
 
+  async function getResult() {
+    try {
+      await fetch("/result")
+        .then((res) => res.json())
+        .then((data) => {
+          setWorkoutType(data.workout_type);
+          setExercises(data.exercises);
+          setReps(data.reps);
+          setSets(data.sets);
+        });
+    } catch (e) {
+      return;
+    }
+  }
   useEffect(async () => {
-    await fetch("/api/result")
-      .then((res) => res.json())
-      .then((data) => {
-        setWorkoutType(data.workout_type);
-        setExercises(data.exercises);
-        setReps(data.reps);
-        setSets(data.sets);
-      });
+    getResult();
   }, []);
 
   return (
