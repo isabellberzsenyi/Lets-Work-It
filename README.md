@@ -1,3 +1,9 @@
+# Tutorials Used:
+
+Setup Flask/React Project: https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project
+
+Deploy Flask/React Project: https://medium.com/swlh/how-to-deploy-a-react-python-flask-project-on-heroku-edb99309311
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
