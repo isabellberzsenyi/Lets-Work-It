@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Input, Label, Alert } from "reactstrap";
+import { Form, FormGroup, Input, Label } from "reactstrap";
 import Button from "reactstrap/lib/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useHistory } from "react-router-dom";
@@ -76,16 +76,7 @@ const WorkoutForm = () => {
   return (
     <div>
       <Form className='workout-form'>
-        <h2
-          style={{
-            textAlign: "center",
-            fontWeight: "bold",
-            color: "#ffb535",
-            textShadow:
-              "-1px -1px 0 #fff6d9, 1px -1px 0 #fff6d9, -1px 1px 0 #fff6d9, 1px 1px 0 #fff6d9",
-          }}>
-          Let's get to it
-        </h2>
+        <h2 id='form-title'>Let's get to it</h2>
         <FormGroup tag='fieldset' className='form-group'>
           <Label className='form-labels'>Choose your Workout Type:</Label>
           <FormGroup check>
@@ -152,7 +143,6 @@ const WorkoutForm = () => {
                   type='radio'
                   name='difficulty'
                   className='opt'
-                  style={{ color: "red" }}
                   onClick={() => setDifficulty("difficult")}
                 />
                 Hard
@@ -213,7 +203,7 @@ const WorkoutForm = () => {
           <Button
             id='form-button'
             onClick={(e) => {
-              e.preventDefault;
+              // e.preventDefault;
               sendData();
             }}>
             Work It

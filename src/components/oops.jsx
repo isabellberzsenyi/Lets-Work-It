@@ -10,11 +10,7 @@ const Oops = () => {
         <div className='col-sm-8 col-sm-offset-2'>
           <h3>Oh no, something went wrong!</h3>
           <p>Please try again later.</p>
-          <Button
-            id='form-button'
-            onClick={() => {
-              history.push("/");
-            }}>
+          <Button id='form-button' onClick={() => history.push("/")}>
             Back Home
           </Button>
         </div>

@@ -15,7 +15,7 @@ const RoutineSection = (props) => {
       </div>
       <div className='row'>
         <div className='col-sm-10'>
-          <ul className='list-item' style={{ marginLeft: "1em" }}>
+          <ul className='list-item ml-1'>
             {props.bullets.map((bullet) => (
               <li>
                 <p>{bullet}</p>

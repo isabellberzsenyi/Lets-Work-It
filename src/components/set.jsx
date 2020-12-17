@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { intervalText, circuitText } from "../info";
 
 const Set = (props) => {
-  const [toolTipOpen, setToolTipOpen] = useState(false);
-  const toggle = () => setToolTipOpen(!toolTipOpen);
-
   const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
   const getExerciseContent = (exercises, reps) => {
@@ -30,6 +27,7 @@ const Set = (props) => {
     }
     return content;
   };
+
   return (
     <div>
       <div className='row'>
@@ -51,9 +49,7 @@ const Set = (props) => {
       </div>
       <div className='row'>
         <div className='col-sm-10'>
-          <ul className='list-item' style={{ marginLeft: "1em" }}>
-            {getExerciseContent(props.exercises, props.reps)}
-          </ul>
+          <ul className='list-item ml-1'>{getExerciseContent(props.exercises, props.reps)}</ul>
         </div>
       </div>
     </div>

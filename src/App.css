@@ -1,3 +1,4 @@
+/* OVERALL */
 p {
   font-size: 16px;
 }
@@ -49,6 +50,7 @@ h5:before {
   min-height: 80vh;
 }
 
+/* WORKOUT FORM */
 .workout-form {
   background-color: #fcdc80;
   border-radius: 15px;
@@ -56,6 +58,13 @@ h5:before {
   padding: 1em;
   font-size: 16px;
   font-weight: 500;
+}
+
+#form-title {
+  text-align: center;
+  font-weight: bold;
+  color: #ffb535;
+  text-shadow: -1px -1px 0 #fff6d9, 1px -1px 0 #fff6d9, -1px 1px 0 #fff6d9, 1px 1px 0 #fff6d9;
 }
 
 .form-labels {
@@ -85,6 +94,12 @@ h5:before {
   text-align: center;
 }
 
+.length-select,
+.opt:hover {
+  cursor: pointer;
+}
+
+/* SHARED FORM AND RESULT */
 button#form-button,
 button#form-button:focus,
 button#back-button:hover,
@@ -112,11 +127,7 @@ button#back-button {
   outline: none;
 }
 
-.length-select,
-.opt:hover {
-  cursor: pointer;
-}
-
+/* WORKOUT RESULT */
 .workout-result {
   background-color: #fcdc80;
   border-radius: 15px;
@@ -143,6 +154,7 @@ button#back-button {
   padding-right: 2em;
 }
 
+/* OVERRIDES */
 #bootstrap-overrides input[type="radio"],
 #bootstrap-overrides input[type="checkbox"] {
   margin: 0px 5px 0px;
