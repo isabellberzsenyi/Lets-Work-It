@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div className='App' id='bootstrap-overrides'>
       <header className='App-header'>
-        <div className='col-md-6'>Work It</div>
+        <div className='col-md-6'>Let's Work It</div>
       </header>
       <BrowserRouter>
         <div className='Site-content'>
